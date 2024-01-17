@@ -1,12 +1,10 @@
 # Tank versus Monsters
 
-Среда разработки: Unity 2022.3.12f, Universal RP
+Unity 2022.3.12f, Universal RP
 
-![StartPos](https://github.com/true-10/DungeonGame/blob/master/GameScreen.jpg)
+![StartPos](https://github.com/true-10/TankVsMonsters/blob/master/GameScreen.png)
 
-
-
-## Управление: 
-- передвижение на стрелках
-- q/w смена оружия
-- x - стрельба
+## controls 
+- wasd - movement
+- q/w - switch weapon
+- x - fire
