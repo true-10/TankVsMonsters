@@ -8,12 +8,12 @@ namespace TankVsMonsters.Characters
     {
         public Action<BattleUnit>  OnUnitDeath { get; set; }
 
-        public TankBehaviour Tank => tank;
+        public BattleUnit Tank => tank;
 
         private List<MonsterBehaviour> monsters;
-        private TankBehaviour tank;
+        private BattleUnit tank;
 
-        public void Init(List<MonsterBehaviour> monsters, TankBehaviour tank)
+        public void Init(List<MonsterBehaviour> monsters, BattleUnit tank)
         {
             this.tank = tank;
             this.monsters = monsters;

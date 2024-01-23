@@ -14,7 +14,7 @@ namespace TankVsMonsters.Characters
       //  [SerializeField]
         //private SingleMonsterStaticDataSO enemyStaticDataSO;
         [SerializeField]
-        private TankInRangeTrigger tankInRangeTrigger;
+        private PlayerInRangeTrigger tankInRangeTrigger;
         [SerializeField]
         private MonsterIdleLogicBaseSO idleStateSO;
         [SerializeField]
@@ -101,7 +101,7 @@ namespace TankVsMonsters.Characters
 
         protected float GetSpeedValue() => staticData.MoveSpeed;
 
-        private void OnExit(TankBehaviour tank)
+        private void OnExit(BattleUnit tank)
         {
             if (staticData.MonsterType != MonsterType.Range)
             {
@@ -110,7 +110,7 @@ namespace TankVsMonsters.Characters
            stateMachine.SetState(monsterIdleState);
         }
 
-        private void OnEnter(TankBehaviour tank)
+        private void OnEnter(BattleUnit tank)
         {
             if (staticData.MonsterType != MonsterType.Range)
             {

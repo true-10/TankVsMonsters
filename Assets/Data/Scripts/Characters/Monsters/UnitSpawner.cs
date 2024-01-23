@@ -13,11 +13,11 @@ namespace TankVsMonsters.Characters
         private BattleUnitManager unitManager;
 
         [SerializeField]
-        private Transform tankSpawnPoint;
+        private Transform characterSpawnPoint;
         [SerializeField]
-        private GameObject tankPrefab;
+        private GameObject characterPrefab;
         [SerializeField]
-        private FollowTransform tankFollower;
+        private FollowTransform characterFollower;
         [SerializeField]
         private Transform monsterRoot;
         [SerializeField]
@@ -25,7 +25,7 @@ namespace TankVsMonsters.Characters
 
         private MonsterStaticDataManager monsterStaticDataManager;
         private List<MonsterBehaviour> monsters;
-        private TankBehaviour tank;
+        private BattleUnit character;
 
         private void Awake()
         {
@@ -38,7 +38,7 @@ namespace TankVsMonsters.Characters
             RealSpawnOnStart(); 
             SpawnTank();
 
-            unitManager.Init(monsters, tank);
+            unitManager.Init(monsters, character);
             unitManager.OnUnitDeath += OnUnitDeath;
         }
 
@@ -90,9 +90,9 @@ namespace TankVsMonsters.Characters
 
         public void SpawnTank()
         {
-            var tankGo = Instantiate(tankPrefab, tankSpawnPoint.position, Quaternion.identity, null);
-            tank = tankGo.GetComponent<TankBehaviour>();
-            tankFollower.SetTarget(tank.transform);
+            var tankGo = Instantiate(characterPrefab, characterSpawnPoint.position, Quaternion.identity, null);
+            character = tankGo.GetComponent<BattleUnit>();
+            characterFollower.SetTarget(character.transform);
         }
 
 
